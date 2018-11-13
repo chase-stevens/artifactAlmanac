@@ -2,6 +2,7 @@
 path: "/hero/bristleback"
 date: "2018-11-13"
 title: "Hero Card: Bristleback"
+card: "./bristlebackCard.png"
 ---
 
 # Hero Card: Bristleback

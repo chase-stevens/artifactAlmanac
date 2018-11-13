@@ -2,6 +2,7 @@
 path: "/hero/axe"
 date: "2018-11-13"
 title: "Hero Card: Axe"
+card: "./axeCard.png"
 ---
 
 # Hero Card: Axe

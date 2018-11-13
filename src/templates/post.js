@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import Img from 'gatsby-image';
 
 export default function Template({ data }) {
   const { markdownRemark } = data;
@@ -13,6 +14,7 @@ export default function Template({ data }) {
           className="post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <Img fluid={frontmatter.card.childImageSharp.fluid} />
         <Link to="/">
           Home Page
         </Link>
@@ -29,6 +31,16 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        card {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90, duotone: { highlight: "#386eee", shadow: "#2323be", opacity: 40 }) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+            resize(width: 1200, quality: 90) {
+              src
+            }
+          }
+        }
       }
     }
   }
