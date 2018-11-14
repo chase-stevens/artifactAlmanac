@@ -14,7 +14,7 @@ export default function Template({ data }) {
           className="post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <Img fluid={frontmatter.card.childImageSharp.fluid} />
+        <Img fixed={frontmatter.card.childImageSharp.fixed} />
         <Link to="/">
           Home Page
         </Link>
@@ -33,11 +33,8 @@ export const pageQuery = graphql`
         title
         card {
           childImageSharp {
-            fluid(maxWidth: 1920, quality: 90, duotone: { highlight: "#386eee", shadow: "#2323be", opacity: 40 }) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-            resize(width: 1200, quality: 90) {
-              src
+            fixed(width: 176, height: 299, quality: 90) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
