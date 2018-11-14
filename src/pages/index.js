@@ -4,8 +4,12 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Image from '../components/image'
 
-const listItems = artifactCardSet01.cardset.cardlist.map(function(cardname) =>
-  return <li>{cardname.english}</li>
+import CardSet from '../../content/artifactCardSet01'
+
+console.log(`cards: ${CardSet.card_set.card_list[0].card_name.english}`)
+
+const listItems = CardSet.card_set.card_list.map((card) =>
+  <li>{card.card_name.english}</li>
 );
 
 const IndexPage = () => (
