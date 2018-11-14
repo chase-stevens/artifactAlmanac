@@ -4,6 +4,10 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Image from '../components/image'
 
+const listItems = artifactCardSet01.cardset.cardlist.map(function(cardname) =>
+  return <li>{cardname.english}</li>
+);
+
 const IndexPage = () => (
   <Layout>
     <h1>Greetings Nerds</h1>
@@ -12,8 +16,9 @@ const IndexPage = () => (
     <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
       <Image />
     </div>
-    <Link to="/hero/axe">Axe</Link>
-    <Link to="/hero/bristleback">Bristleback</Link>
+
+    <ul>{listItems}</ul>
+
   </Layout>
 )
 

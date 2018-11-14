@@ -14,7 +14,9 @@ export default function Template({ data }) {
           className="post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <Img fixed={frontmatter.card.childImageSharp.fixed} />
+        <div className="card-data">
+        </div>
+        <Img fixed={frontmatter.cardimage.childImageSharp.fixed} /><br/>
         <Link to="/">
           Home Page
         </Link>
@@ -31,7 +33,12 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
-        card {
+        type
+        color
+        attack
+        armor
+        health
+        cardimage {
           childImageSharp {
             fixed(width: 176, height: 299, quality: 90) {
               ...GatsbyImageSharpFixed
