@@ -6,11 +6,9 @@ import Image from '../components/image'
 
 import CardSet from '../../content/artifactCardSet01'
 
-console.log(`cards: ${CardSet.card_set.card_list[0].card_name.english}`)
-
 const listItems = CardSet.card_set.card_list.map((card) =>
   <li>
-    <Link to={"/" + card.card_type + "/" + card.card_name.english + "/"}>
+    <Link to={"/" + card.card_name.english.toLowerCase().replace(/ /g,'-') + "/"}>
       {card.card_name.english}: {card.card_type}
     </Link>
   </li>
