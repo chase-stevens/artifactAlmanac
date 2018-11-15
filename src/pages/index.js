@@ -22,9 +22,13 @@ const IndexPage = () => (
     <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
       <Image />
     </div>
-
-    <ul>{listItems}</ul>
-
+    <ul>
+      <li><Link to="/heroPage">Heroes</Link></li>
+      <li><Link to="/spellPage">Spells</Link></li>
+      <li><Link to="/creepPage">Creeps</Link></li>
+      <li><Link to="/improvementPage">Improvements</Link></li>
+      <li><Link to="/itemPage">Items</Link></li>
+    </ul>
   </Layout>
 )
 

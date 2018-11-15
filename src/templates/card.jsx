@@ -5,14 +5,25 @@ import CardSet from '../../content/artifactCardSet01'
 
 const Card = ({ pageContext: { card } }) => {
 
-  const relatedCards = card.references.map((relatedCard) =>
-    console.log(relatedCard.card_id)
+  let relatedCardsArray = [];
+
+  for (let i = 0; i < card.references.length; i++) {
+    for (let j = 0; j < CardSet.card_set.card_list.length; j++) {
+      if (CardSet.card_set.card_list[j].card_id == card.references[i].card_id) {
+        relatedCardsArray.push(CardSet.card_set.card_list[j])
+      }
+    }
+  }
+
+  const relatedCards = relatedCardsArray.map((card) =>
+    <li>
+      <Link to={"/" + card.card_name.english.toLowerCase().replace(/ /g,'-') + "/"}>
+        {card.card_name.english}: {card.card_type}
+      </Link>
+      <p>{card.card_text.english}</p>
+    </li>
   );
-  /*
-  const relatedCards = CardSet.card_set.card_list.references.map((card) =>
-      console.log(`${card.card_id}`)
-  );
-  */
+
 
   function CardText() {
     return  <p>{card.card_text.english}</p>;
@@ -28,7 +39,7 @@ const Card = ({ pageContext: { card } }) => {
         <h1>{card.card_name.english}</h1>
         { card.large_image.default ? <CardImage/> : <CardText/> }
         <p>Related Cards</p>
-        {/*<ul>{relatedCards}</ul>*/}
+        <ul>{relatedCards}</ul>
         <Link to="/">
           Home Page
         </Link>
