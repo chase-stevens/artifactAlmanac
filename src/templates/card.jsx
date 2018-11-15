@@ -41,8 +41,10 @@ const Card = ({ pageContext: { card } }) => {
         <div className="post">
           <h1>{card.card_name.english}</h1>
           { card.large_image.default ? <CardImage/> : <CardText/> }
-          <p>Related Cards</p>
-          <ul>{relatedCards}</ul>
+          { card.references === undefined || card.references.length == 0 ?
+            <br/> :
+            <><p>Related Cards</p><ul>{relatedCards}</ul></>
+          }
           <Link to="/">
             Home Page
           </Link>
