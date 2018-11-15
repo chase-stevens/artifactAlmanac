@@ -19,17 +19,11 @@ const IndexPage = () => (
     <h1>Greetings Nerds</h1>
     <p>Your one stop shop for all things Artifact</p>
     <p>Now go get good.</p>
+    <p><Link to="/cards">Cards</Link></p>
     <p><Link to="/howToPlay">Tutorial</Link></p>
     <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
       <Image />
     </div>
-    <ul>
-      <li><Link to="/heroPage">Heroes</Link></li>
-      <li><Link to="/spellPage">Spells</Link></li>
-      <li><Link to="/creepPage">Creeps</Link></li>
-      <li><Link to="/improvementPage">Improvements</Link></li>
-      <li><Link to="/itemPage">Items</Link></li>
-    </ul>
   </Layout>
 )
 
