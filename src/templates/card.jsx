@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from 'gatsby-image';
+
+import Layout from '../components/layout'
 import CardSet from '../../content/artifactCardSet01'
 
 const Card = ({ pageContext: { card } }) => {
@@ -34,17 +36,19 @@ const Card = ({ pageContext: { card } }) => {
   }
 
   return (
-    <div className="post-container">
-      <div className="post">
-        <h1>{card.card_name.english}</h1>
-        { card.large_image.default ? <CardImage/> : <CardText/> }
-        <p>Related Cards</p>
-        <ul>{relatedCards}</ul>
-        <Link to="/">
-          Home Page
-        </Link>
+    <Layout>
+      <div className="post-container">
+        <div className="post">
+          <h1>{card.card_name.english}</h1>
+          { card.large_image.default ? <CardImage/> : <CardText/> }
+          <p>Related Cards</p>
+          <ul>{relatedCards}</ul>
+          <Link to="/">
+            Home Page
+          </Link>
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
