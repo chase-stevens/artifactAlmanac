@@ -10,7 +10,7 @@ exports.createPages = ({ actions, graphql }) => {
   CardSet.card_set.card_list.forEach(card => {
     createPage({
       path: `/${card.card_name.english.toLowerCase().replace(/ /g,'-')}`,
-      component: __dirname + '/src/templates/card.js',
+      component: __dirname + '/src/templates/card.jsx',
       context: {card},
     })
   })
